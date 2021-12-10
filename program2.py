@@ -6,6 +6,7 @@
 # Repeat asking the user until the random number has been guessed correctly.
 import random
 
+# program asks user to input a number along with input validation
 def play():
     while True:
         try:
@@ -20,8 +21,24 @@ def play():
             break
     return guess
 
+def checkNumber(userguess, correctguess):
+    if userguess > correctguess:
+        print("Greater than")
+    elif userguess < correctguess:
+        print("Less than")
+    elif userguess == correctguess:
+        print("Congratulations! You guessed the number!")
+
+def game(winningNum):
+    guessNum = ("")
+    while guessNum != winningNum:
+        guessNum = play()
+        checkNumber(guessNum, winningNum)
+        continue
+
 def guess():
-    correctNum= random.sample(range(0,100),1)
+    correctNum= random.randint(0,100)
+    game(correctNum)
     return correctNum
 
 def onceMore():
