@@ -12,8 +12,12 @@ import random
 def askNums():
     while True:
         try:
-            firstnum= input("Enter your first number; any number ranging from 0-9: ")
+            firstnum= int(input("Enter your first number; any number ranging from 0-9: "))
             if firstnum not in range(0,9):
-                print("Invalid Input. Number is out of range.")
+                print("Invalid input. Number is out of range.")
                 continue
-            secondnum=
+            secondnum= int(input("Enter your second number; any number ranging from 0-9: "))
+            if secondnum not in range(0,9):
+                print("Invalid input. Number is out of range.")
+                continue
+            thirdnum= int(input("Enter your third number; any number ranging from 0-9: "))
