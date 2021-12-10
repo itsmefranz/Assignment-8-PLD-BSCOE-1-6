@@ -8,3 +8,12 @@
 #if “n” the program will exit.
 
 import random
+
+def askNums():
+    while True:
+        try:
+            firstnum= input("Enter your first number; any number ranging from 0-9: ")
+            if firstnum not in range(0,9):
+                print("Invalid Input. Number is out of range.")
+                continue
+            secondnum=
