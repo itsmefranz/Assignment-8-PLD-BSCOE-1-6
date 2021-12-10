@@ -22,6 +22,7 @@ def checker(userNums, winningNums):
         print ("Your numbers: ", userNums)
         print ("The winning lottery numbers are: ", winningNums, "\n")
 
+
 # program asks user to input three number along with input validation
 def askNums():
     while True:
@@ -46,12 +47,30 @@ def askNums():
     numList= [firstnum, secondnum,thirdnum]
     return numList
 
-# program generates winning numbers that would be random three
+# program generates three winning numbers that would be random
 def getWinningNums():
     winnum1, winnum2, winnum3= random.sample(range(0,9),3)
     winningList= [winnum1, winnum2, winnum3]
     return winningList
 
+#will asks if user wishes to try again
+def onceMore():
+     while True:
+        yn = input("Do you wish to try again?: ")
+        yn = yn.lower()
+        if yn == 'y':
+            print("\n")
+            askNums()
+            getWinningNums()
+            checker(userNums,winningNums)
+        elif yn == 'n':
+            print("Thanks for playing!")
+            break
+        else:
+            print("\n")
+            print("Please enter y if you want to play again, or enter n to exit the game.")
+
 userNums= askNums()
 winningNums = getWinningNums()
 checker(userNums, winningNums)
+onceMore()
